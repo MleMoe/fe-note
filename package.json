@@ -1,0 +1,16 @@
+{
+  "name": "fe-note",
+  "version": "1.0.0",
+  "description": "a front-end note",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": "https://github.com/MleMoe/fe-note.git",
+  "author": "MleMoe(MIA)",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.8.2"
+  }
+}
