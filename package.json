@@ -4,13 +4,21 @@
   "description": "a front-end note",
   "main": "index.js",
   "scripts": {
+    "dev": "yarn docs:dev",
+    "build": "yarn docs:build",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "deploy": "sh deploy.sh"
   },
   "repository": "https://github.com/MleMoe/fe-note.git",
   "author": "MleMoe(MIA)",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-search": "^1.8.2",
+    "babel-plugin-component": "^1.1.1",
     "vuepress": "^1.8.2"
+  },
+  "dependencies": {
+    "element-ui": "^2.15.2"
   }
 }
