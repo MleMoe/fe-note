@@ -45,7 +45,7 @@ module.exports = {
     ],
 
     sidebar: {
-      '/travel/': ['', 'component'],
+      '/travel/': ['', 'todo-react', 'component'],
       '/js/': ['', 'object'],
     },
   },
