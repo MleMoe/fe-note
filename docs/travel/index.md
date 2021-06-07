@@ -6,9 +6,9 @@ sidebarDepth: 3
 
 ## 前言
 
-Todo React，是我在实习时候，组里前辈给新人开设的课程。前辈讲课超棒，借用一个 uu 的比喻来说，就像是剥洋葱，一层一层给你把 React 讲清楚了。让人叹为观止，是能让我忍不住做笔记好好学习的地步了。
+Todo React，是组里前辈给新人开设的课程。前辈讲课超棒，借用一个 uu 的比喻来说，就像是剥洋葱，一层一层给你把 React 讲清楚了。让人叹为观止，是能让我忍不住做笔记好好学习的地步了。
 
-这里就记录我的收获，可能不只是课程，也会穿插一些前端知识点。ps：这文档第一次成稿还较为潦草，只是讲了大致流程，其中细节因为时间关系没有详写，以后会继续更新改善的（不咕）。
+这里就记录我的收获，可能不只是课程，也会穿插一些前端知识点。ps：这文档第一次成稿还较为潦草，只是讲了大致流程，其中细节因为时间关系没有详写，以后会继续更新改善（不咕）。
 
 那么就让我们开始吧！
 
@@ -40,21 +40,21 @@ Todo React，是我在实习时候，组里前辈给新人开设的课程。前�
 
 注意，虽然说是单例类，但是其实函数也可以。
 
-单例模式示例，比如 createStore 函数，若在 localStroge 中有 cacheKey 的存储内容，则返回该相关 state 值，若不存在，则新建。可以注意到 react 组件中也有 state 变量，作用也类似。
+单例模式示例，比如 createStore 函数，若在 localStorage 中有 cacheKey 的存储内容，则返回该相关 state 值，若不存在，则新建。可以注意到 react 组件中也有 state 变量，作用也类似。
 
 ```js
 function createStore(cacheKey, onChange) {
   return {
     cacheKey,
     state: (cacheKey && loadState(cacheKey)) || {
-      filterType: "",
+      filterType: '',
       todoList: [],
     },
   };
 }
 
 function loadState(cacheKey) {
-  return JSON.parse(localStorage.getItem(cacheKey) || "null") || undefined;
+  return JSON.parse(localStorage.getItem(cacheKey) || 'null') || undefined;
 }
 ```
 
@@ -83,7 +83,7 @@ interface Todo {
 
 ```js
 // utils.js
-import $ from "jquery";
+import $ from 'jquery';
 
 // 增
 export function addTodo(todoList, text) {
@@ -119,7 +119,7 @@ export function toggleTodoList(todoList, done) {
 
 // 从 localStorage 加载 Todo List 数据
 export function loadState(cacheKey) {
-  return JSON.parse(localStorage.getItem(cacheKey) || "null") || undefined;
+  return JSON.parse(localStorage.getItem(cacheKey) || 'null') || undefined;
 }
 
 // 将 Todo List 数据存入 localStorage
@@ -152,7 +152,7 @@ import {
   isChanged,
   loadState,
   saveState,
-} from "./utils";
+} from './utils';
 
 export default function createStore(cacheKey, onChange) {
   return {
@@ -160,7 +160,7 @@ export default function createStore(cacheKey, onChange) {
 
     // 单例模式关键
     state: (cacheKey && loadState(cacheKey)) || {
-      filterType: "",
+      filterType: '',
       todoList: [],
     },
 
@@ -169,9 +169,9 @@ export default function createStore(cacheKey, onChange) {
     get filteredList() {
       return this.state.todoList.filter((todo) => {
         switch (this.state.filterType) {
-          case "active":
+          case 'active':
             return !todo.done;
-          case "completed":
+          case 'completed':
             return todo.done;
           default:
             return true;
@@ -228,21 +228,21 @@ export default function createStore(cacheKey, onChange) {
       });
       const todo = this.state.todoList[this.state.todoList.length - 1];
       // 对外部的响应
-      this.dispatch("add", todo);
+      this.dispatch('add', todo);
     },
 
     remove(id) {
       this.setState({
         todoList: removeTodo(this.state.todoList, id),
       });
-      this.dispatch("remove", { id });
+      this.dispatch('remove', { id });
     },
 
     update(id, text) {
       this.setState({
         todoList: updateTodo(this.state.todoList, id, { text }),
       });
-      this.dispatch("update", { id, text });
+      this.dispatch('update', { id, text });
     },
 
     toggle(id) {
@@ -250,20 +250,20 @@ export default function createStore(cacheKey, onChange) {
       this.setState({
         todoList: updateTodo(this.state.todoList, id, { done }),
       });
-      this.dispatch("toggle", { id, done });
+      this.dispatch('toggle', { id, done });
     },
 
     toggleAll(allDone) {
-      const done = typeof allDone === "boolean" ? allDone : !!this.leftCount;
+      const done = typeof allDone === 'boolean' ? allDone : !!this.leftCount;
       this.setState({
         todoList: toggleTodoList(this.state.todoList, done),
       });
-      this.dispatch("toggleAll", { done });
+      this.dispatch('toggleAll', { done });
     },
 
     filter(filterType) {
       this.setState({ filterType });
-      this.dispatch("filter", { filterType });
+      this.dispatch('filter', { filterType });
     },
   };
 }
@@ -464,8 +464,8 @@ update() {
 新建 index.js，在其中写入一下内容。其实就算将 APP mount 出来的 dom 内容加入 body 中，事件绑定、动作监听这些事情，APP Class 已经做好了。
 
 ```js
-import $ from "jquery";
-import App from "./App";
+import $ from 'jquery';
+import App from './App';
 
 function render(component, container) {
   $(container).append(component);
@@ -473,7 +473,7 @@ function render(component, container) {
 
 render(
   new App({
-    cacheKey: "todo-app-reload",
+    cacheKey: 'todo-app-reload',
   }).mount(),
   document.body
 );
@@ -573,8 +573,8 @@ update() {
 新建一个 diff.js，专门用来放置 diff 操作。注意，不仅是节点类别要比较，节点属性也要比较。通过 data-key 值 来判断是否是同一个节点，所以需要在 App Class 的 render 函数中 Todo 节点项增加此属性。对于同一个 data-key，若判断其内容又变，则直接用新节点替换旧节点。
 
 ```js
-const PROPS = ["className", "htmlFor", "value", "checked"];
-const IGNORE_ATTRS = ["class", "for", "value", "checked"];
+const PROPS = ['className', 'htmlFor', 'value', 'checked'];
+const IGNORE_ATTRS = ['class', 'for', 'value', 'checked'];
 
 function findChildIndexByKey(children, value, ignore) {
   return children.findIndex(
@@ -670,7 +670,7 @@ function diffProps(node, newNode) {
 export function diff(node, newNode, parentNode) {
   if (node && newNode) {
     if (node.nodeName === newNode.nodeName) {
-      if (node.nodeName === "#text") {
+      if (node.nodeName === '#text') {
         if (node.textContent !== newNode.textContent) {
           node.textContent = newNode.textContent;
         }
@@ -809,11 +809,11 @@ render() {
 
 ```js
 onAdd = (e) => {
-  if (e.key === "Enter") {
+  if (e.key === 'Enter') {
     const text = e.currentTarget.value;
     const input = e.currentTarget;
     this.store.add(text);
-    input.value = "";
+    input.value = '';
     input.focus();
   }
 };
@@ -828,17 +828,17 @@ onToggle = (id) => {
 
 onEdit = (e) => {
   const item = e.currentTarget.parentNode.parentNode;
-  const input = item.querySelector(".edit");
+  const input = item.querySelector('.edit');
   const value = input.value;
-  item.classList.add("editing");
-  input.value = "";
+  item.classList.add('editing');
+  input.value = '';
   input.focus();
   input.value = value;
 };
 
 onUpdate = (e, id) => {
   const item = e.currentTarget.parentNode;
-  item.classList.remove("editing");
+  item.classList.remove('editing');
   this.store.update(id, e.currentTarget.value);
 };
 ```
@@ -867,10 +867,10 @@ update() {
 更新后的 diff.js，// 内容有点多，等有空再来详细介绍
 
 ```js
-const TEXT = Symbol("VDOM_TEXT");
-const PROPS = ["className", "htmlFor", "value", "checked"];
+const TEXT = Symbol('VDOM_TEXT');
+const PROPS = ['className', 'htmlFor', 'value', 'checked'];
 const EVENT_MAP = {
-  onDoubleClick: "ondblclick",
+  onDoubleClick: 'ondblclick',
 };
 
 function findChildIndexBy(children, key, value, ignore) {
@@ -892,7 +892,7 @@ function diffChildren(node, newNode) {
     if (key != null || type != null) {
       const index = findChildIndexBy(
         children,
-        key != null ? "key" : "type",
+        key != null ? 'key' : 'type',
         key != null ? key : type,
         updated
       );
@@ -1011,7 +1011,7 @@ function setProp(node, prop, val, remove) {
   } else if (PROPS.includes(prop)) {
     node[prop] = val;
   } else {
-    node[remove ? "removeAttribute" : "setAttribute"](prop, val);
+    node[remove ? 'removeAttribute' : 'setAttribute'](prop, val);
   }
 }
 
@@ -1043,11 +1043,11 @@ export function mount(vdom, parentNode) {
 如何使用 react 来 Todo List 呢？其实具体逻辑和 vdom 一样，优点也是一样，只是 react 帮我们做了一些封装，代码会简短很多。我们不再需要自己写 diff，只需要写 App.js 和 index.js 就可以了。
 
 ```js
-import cx from "classnames";
-import createStore from "@/common/store";
-import { createElement, Component } from "react";
-import PropTypes from "prop-types";
-import "@/common/base.css";
+import cx from 'classnames';
+import createStore from '@/common/store';
+import { createElement, Component } from 'react';
+import PropTypes from 'prop-types';
+import '@/common/base.css';
 
 export default class App extends Component {
   static propTypes = {
@@ -1066,11 +1066,11 @@ export default class App extends Component {
   }
 
   onAdd = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       const text = e.currentTarget.value;
       const input = e.currentTarget;
       this.store.add(text);
-      input.value = "";
+      input.value = '';
       input.focus();
     }
   };
@@ -1085,17 +1085,17 @@ export default class App extends Component {
 
   onEdit = (e) => {
     const item = e.currentTarget.parentNode.parentNode;
-    const input = item.querySelector(".edit");
+    const input = item.querySelector('.edit');
     const value = input.value;
-    item.classList.add("editing");
-    input.value = "";
+    item.classList.add('editing');
+    input.value = '';
     input.focus();
     input.value = value;
   };
 
   onUpdate = (e, id) => {
     const item = e.currentTarget.parentNode;
-    item.classList.remove("editing");
+    item.classList.remove('editing');
     this.store.update(id, e.currentTarget.value);
   };
 
@@ -1117,12 +1117,12 @@ export default class App extends Component {
 
     // create
     return (
-      <section className="todoapp">
-        <header className="header">
+      <section className='todoapp'>
+        <header className='header'>
           <h1>todos</h1>
           <input
-            className="new-todo"
-            placeholder="What needs to be done?"
+            className='new-todo'
+            placeholder='What needs to be done?'
             autoFocus
             onKeyUp={this.onAdd}
           />
@@ -1134,32 +1134,32 @@ export default class App extends Component {
           })}
         >
           <input
-            id="toggle-all"
-            className="toggle-all"
+            id='toggle-all'
+            className='toggle-all'
             checked={!(!todoList.length || leftCount)}
-            type="checkbox"
+            type='checkbox'
             onChange={this.onToggleAll}
           />
-          <label htmlFor="toggle-all">Mark all as complete</label>
-          <ul className="todo-list">
+          <label htmlFor='toggle-all'>Mark all as complete</label>
+          <ul className='todo-list'>
             {filteredList.map(({ id, text, done }) => {
               return (
                 <li data-id={id} key={id} className={cx({ completed: done })}>
-                  <div className="view">
+                  <div className='view'>
                     <input
-                      className="toggle"
+                      className='toggle'
                       checked={done}
-                      type="checkbox"
+                      type='checkbox'
                       onChange={() => this.onToggle(id)}
                     />
                     <label onDoubleClick={this.onEdit}>{text}</label>
                     <button
-                      className="destroy"
+                      className='destroy'
                       onClick={() => this.onRemove(id)}
                     ></button>
                   </div>
                   <input
-                    className="edit"
+                    className='edit'
                     defaultValue={text}
                     onBlur={(e) => this.onUpdate(e, id)}
                   />
@@ -1167,34 +1167,34 @@ export default class App extends Component {
               );
             })}
           </ul>
-          <footer className="footer">
-            <span className="todo-count">
+          <footer className='footer'>
+            <span className='todo-count'>
               <strong>{leftCount}</strong> items left
             </span>
-            <ul className="filters">
+            <ul className='filters'>
               <li>
                 <a
-                  href="#/"
-                  className={cx({ selected: filterType === "" })}
-                  onClick={() => this.onFilter("")}
+                  href='#/'
+                  className={cx({ selected: filterType === '' })}
+                  onClick={() => this.onFilter('')}
                 >
                   All
                 </a>
               </li>
               <li>
                 <a
-                  href="#/active"
-                  className={cx({ selected: filterType === "active" })}
-                  onClick={() => this.onFilter("active")}
+                  href='#/active'
+                  className={cx({ selected: filterType === 'active' })}
+                  onClick={() => this.onFilter('active')}
                 >
                   Active
                 </a>
               </li>
               <li>
                 <a
-                  href="#/completed"
-                  className={cx({ selected: filterType === "completed" })}
-                  onClick={() => this.onFilter("completed")}
+                  href='#/completed'
+                  className={cx({ selected: filterType === 'completed' })}
+                  onClick={() => this.onFilter('completed')}
                 >
                   Completed
                 </a>
@@ -1202,7 +1202,7 @@ export default class App extends Component {
             </ul>
             <button
               className={cx({
-                "clear-completed": true,
+                'clear-completed': true,
                 hidden: todoList.length === leftCount,
               })}
               onClick={this.onClear}
@@ -1220,13 +1220,13 @@ export default class App extends Component {
 index.js 修改
 
 ```js
-import { createElement } from "react";
-import { render } from "react-dom";
-import App from "./App";
+import { createElement } from 'react';
+import { render } from 'react-dom';
+import App from './App';
 
-const root = document.createElement("div");
+const root = document.createElement('div');
 document.body.appendChild(root);
-render(<App cacheKey="todo-app-react" />, root);
+render(<App cacheKey='todo-app-react' />, root);
 ```
 
 ## 小结
