@@ -1276,3 +1276,34 @@ render(<App cacheKey='todo-app-react' />, root);
 
 - react
   - 和 vdom 差不多
+
+## question
+
+- 原生 dom 操作 与 virtual dom 的比较
+
+  - 性能与可维护性的取舍：vdom 可以专注于数据，不去手动 dom 操作可以大大提高开发效率
+  - dom 操作相对较 js 慢，而且会造成浏览器的回流和重绘;
+  - 重绘性能消耗，为什么 最后还是选择 vdom，因为可以跨平台
+
+    - innerHTML: render html string O(template size) + 重新创建所有 DOM 元素 O(DOM size
+    - vdom: render Virtual DOM + diff O(template size) + 必要的 DOM 更新 O(DOM change)
+    - dom: 必要的 DOM 更新 O(DOM change)
+
+- 为什么会出现 react / vue，毕竟 jquery 也很优秀
+
+专注数据，而不是动作（容易出错，而且需要自己收拾首尾）。
+需求迭代、bug 修复、复用
+
+- vue 的双向绑定
+  - Vue 2.0 使用 Object.defineProperty()实现数据响应
+    Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。
+    递归遍历 data 中的数据，使用 Object.defineProperty()劫持 getter 和 setter，在 getter 中做数据依赖收集处理，在 setter 中 监听数据的变化，并通知订阅当前数据的地方。
+    问题：
+    - 检测不到对象属性的添加和删除
+    - 无法监控到数组下标的变化，导致直接通过数组的下标给数组设置值，不能实时响应。
+    - 当 data 中数据比较多且层级很深的时候，会有性能问题，因为要遍历 data 中所有的数据并给其设置成响应式的。
+  - Vue 3.0 中的 Proxy
+    Proxy 是拦截对象，对对象进行一个"拦截"，外界对该对象的访问，都必须先通过这层拦截。无论访问对象的什么属性，之前定义的还是新增的，它都会走到拦截中，
+    参考：[简单通俗的理解 Vue3.0 中的 Proxy](https://juejin.cn/post/6844904088119853063)
+    proxy 修改的是程序默认行为，就形同于在编程语言层面上做修改，属于元编程(meta programming)
+    [为什么要用 proxy 重构](https://vue3js.cn/es6/#为什么要用proxy重构)

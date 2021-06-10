@@ -27,20 +27,55 @@ module.exports = {
 
     nav: [
       {
-        text: 'CS',
-        link: '/cs/',
+        text: 'CS基础',
+        items: [
+          {
+            text: '数据结构',
+            link: '/data-construct/',
+          },
+          {
+            text: '网络',
+            link: '/network/',
+          },
+        ],
       },
       {
-        text: 'JS',
-        link: '/js/',
+        text: '前端基础',
+        items: [
+          {
+            text: 'HTML',
+            link: '/html/',
+          },
+          {
+            text: 'CSS',
+            link: '/css/',
+          },
+          {
+            text: 'JS',
+            link: '/js/',
+          },
+          {
+            text: 'TS',
+            link: '/ts/',
+          },
+        ],
       },
       {
-        text: 'CSS',
-        link: '/css/',
-      },
-      {
-        text: 'REACT',
-        link: '/react/',
+        text: 'TECH',
+        items: [
+          {
+            text: 'WebGL',
+            link: '/webgl/',
+          },
+          {
+            text: 'Three.js',
+            link: '/three/',
+          },
+          {
+            text: 'WebAssembly',
+            link: '/web-assembly/',
+          },
+        ],
       },
     ],
 
