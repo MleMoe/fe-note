@@ -61,3 +61,7 @@ requestIdleCallback(workLoop);
 上面我们的 performUnitOfWork 并没有实现，但是从上面的结构可以看出来，它接收的参数是一个小任务，同时通过这个小任务还可以找到它的下一个小任务，Fiber 构建的就是这样一个数据结构。Fiber 之前的数据结构是一棵树，父节点的 children 指向了子节点，但是只有这一个指针是不能实现中断继续的。
 
 Fiber 就是改造了这样一个结构，加上了指向父节点和 sibling 节点的指针。
+
+## 参考
+
+[手写 React 的 Fiber 架构，深入理解其原理](https://mp.weixin.qq.com/s/zg2H5t950X3HNthya3pzHw)
