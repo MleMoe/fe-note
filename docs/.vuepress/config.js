@@ -25,59 +25,59 @@ module.exports = {
 
     displayAllHeaders: true,
 
-    nav: [
-      {
-        text: 'CS基础',
-        items: [
-          {
-            text: '数据结构',
-            link: '/data-construct/',
-          },
-          {
-            text: '网络',
-            link: '/network/',
-          },
-        ],
-      },
-      {
-        text: '前端基础',
-        items: [
-          {
-            text: 'HTML',
-            link: '/html/',
-          },
-          {
-            text: 'CSS',
-            link: '/css/',
-          },
-          {
-            text: 'JS',
-            link: '/js/',
-          },
-          {
-            text: 'TS',
-            link: '/ts/',
-          },
-        ],
-      },
-      {
-        text: 'TECH',
-        items: [
-          {
-            text: 'WebGL',
-            link: '/webgl/',
-          },
-          {
-            text: 'Three.js',
-            link: '/three/',
-          },
-          {
-            text: 'WebAssembly',
-            link: '/web-assembly/',
-          },
-        ],
-      },
-    ],
+    // nav: [
+    //   {
+    //     text: 'CS基础',
+    //     items: [
+    //       {
+    //         text: '数据结构',
+    //         link: '/data-construct/',
+    //       },
+    //       {
+    //         text: '网络',
+    //         link: '/network/',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: '前端基础',
+    //     items: [
+    //       {
+    //         text: 'HTML',
+    //         link: '/html/',
+    //       },
+    //       {
+    //         text: 'CSS',
+    //         link: '/css/',
+    //       },
+    //       {
+    //         text: 'JS',
+    //         link: '/js/',
+    //       },
+    //       {
+    //         text: 'TS',
+    //         link: '/ts/',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     text: 'TECH',
+    //     items: [
+    //       {
+    //         text: 'WebGL',
+    //         link: '/webgl/',
+    //       },
+    //       {
+    //         text: 'Three.js',
+    //         link: '/three/',
+    //       },
+    //       {
+    //         text: 'WebAssembly',
+    //         link: '/web-assembly/',
+    //       },
+    //     ],
+    //   },
+    // ],
 
     sidebar: {
       '/travel/': ['', 'todo-react', 'component'],
