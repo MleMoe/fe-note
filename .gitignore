@@ -2,6 +2,10 @@
 dist/
 node_modules/
 
+.temp/
+.cache/
+.vscode/
+
 # lock
 yarn.lock
 package-lock.json
