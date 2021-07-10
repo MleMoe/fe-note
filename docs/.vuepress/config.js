@@ -1,6 +1,6 @@
 module.exports = {
   title: 'fe-note',
-  description: '成为一名真正的前端程序员之旅',
+  description: '前端之旅',
   plugins: [
     [
       '@vuepress/search',
