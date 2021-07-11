@@ -41,8 +41,8 @@ export default defineUserConfig<DefaultThemeOptions>({
         editLinkText: "帮助改善此页面",
       
         sidebar:{
-          '/travel/': ['', 'todo-react.md'],
-          '/js/': ['', 'object.md'],
+          '/travel/': ['index.md', 'todo-react.md'],
+          '/js/': ['index.md', 'object.md'],
         },
       },
     }
