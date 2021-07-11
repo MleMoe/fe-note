@@ -1,4 +1,4 @@
-# 组件化
+# 第二课：组件化
 
 支持组件 Component，需要将 App.js render 方法中的 jsx 内容，分装成多个组件。
 
@@ -87,7 +87,7 @@ child 是自定义组件时，是不是还要做处理。不用
 
 eslint off
 
-<App/>
+`<App/>`
 
 .vdom
 

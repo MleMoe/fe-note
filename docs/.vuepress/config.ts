@@ -40,10 +40,27 @@ export default defineUserConfig<DefaultThemeOptions>({
         lastUpdatedText: "上次更新",
         editLinkText: "帮助改善此页面",
       
-        sidebar:{
-          '/travel/': ['index.md', 'todo-react.md'],
-          '/js/': ['index.md', 'object.md'],
-        },
+        sidebar: [
+          {
+            text: 'travel',
+            link: '/travel/index.md',
+          },
+          {
+            text: 'react',
+            link:'/react',
+            children: [
+              {
+                text: 'todo react',
+                link: '/todo-react/',
+                children: [
+                  'index.md',
+                  'component.md',
+                ]
+              },
+              
+            ]
+          }
+        ],
       },
     }
 
