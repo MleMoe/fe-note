@@ -32,7 +32,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       ['meta', { name: 'author', content: 'MleMoe-MIA' }],
     ],
 
-    // displayAllHeaders: true,
     locales: {
       "/": {
         darkMode: true,
@@ -43,27 +42,32 @@ export default defineUserConfig<DefaultThemeOptions>({
         sidebar: [
           {
             text: 'travel',
-            link: '/travel/index.md',
-          },
-          {
-            text: 'react',
-            link:'/react',
+            link: '/travel/',
             children: [
               {
-                text: 'todo react',
-                link: '/todo-react/',
-                children: [
-                  'index.md',
-                  'component.md',
-                ]
-              },
-              
+                text: '前言',
+                link:'/travel/index.md'
+              }
+            ]
+          },
+          {
+            text: 'todo react',
+            children: [
+              '/fe/react/todo-react/index.md',
+              '/fe/react/todo-react/component.md',
+            ]
+          },
+          {
+            text: 'react-three-fiber',
+            children: [
+              {
+                text: '介绍与基础使用',
+                link: '/tech/three/fiber.md',
+              }
             ]
           }
         ],
       },
     }
-
-    
   },
 });

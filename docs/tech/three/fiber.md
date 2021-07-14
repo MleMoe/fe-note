@@ -2,17 +2,15 @@
 
 ## 介绍
 
-React-three-fiber is a React renderer for three.js.
-
-three.js Object => a re-usable component, that has its own state, reacts to user-input and participates in the render-loop.
+react-three-fiber 是一个 react 版本的“渲染器”，把 three.js 中的 Object 转化为可重用的 React 组件，使之能拥有状态 state，并能以 react 的方式在帧循环中响应用户交互。
 
 ## 为什么？
 
-使用可重用、自包含的组件来声明式地构建三维场景。这些组件可对状态做出反应，易于交互，且可以利用 React 生态。
+使用可重用、自包含的组件来**声明式**地构建三维场景。这些组件可对状态做出反应，易于交互，且可以利用 React 生态。
 
 > Build your scene declaratively with re-usable, self-contained components that react to state, are readily interactive and can tap into React's ecosystem.
 
-## 生态
+使用到的 React 生态有：
 
 - @react-three/gltfjsx
   turns GLTFs into JSX components
@@ -478,4 +476,5 @@ const { scale } = useSpring({
 ## 问题
 
 - 是否会产生多余的开销？会比原生 three.js 慢吗？
+
   没有额外的开销。组件使用的是 React 之外的渲染循环。
