@@ -51,6 +51,10 @@ export default defineUserConfig<DefaultThemeOptions>({
             ]
           },
           {
+            text: 'react hooks',
+            link: '/fe/react/hooks.md'
+          },
+          {
             text: 'todo react',
             children: [
               '/fe/react/todo-react/index.md',
