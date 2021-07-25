@@ -5,7 +5,7 @@
 - scene
   一个微型世界，使用右手坐标系。在其中放置物体，物体存储结构是和 DOM 类似的树结构。
 - camera
-  拍摄这个世界的摄像机。分为 OrthographicCamera（平视？） 和 PerspectiveCamera（透视）
+  拍摄这个世界的摄像机。分为 OrthographicCamera（正交） 和 PerspectiveCamera（透视）
 - renderer
   If the scene is a tiny universe, and the camera is a telescope pointed at that universe, then the renderer is an artist who looks through the telescope and draws what they see onto a `<canvas>`
 
