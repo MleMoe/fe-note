@@ -2,7 +2,7 @@ import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  title: 'note',
+  title: '前端从业者手记',
   description: 'Mia 的前端之旅',
   bundler: '@vuepress/vite',
 
@@ -29,7 +29,7 @@ export default defineUserConfig<DefaultThemeOptions>({
 
     head: [
       ['link', { rel: 'icon', href: '/logo.png', type: 'image/png' }],
-      ['meta', { name: 'author', content: 'MleMoe-MIA' }],
+      ['meta', { name: 'author', content: 'MleMoe' }],
     ],
 
     locales: {
@@ -41,35 +41,33 @@ export default defineUserConfig<DefaultThemeOptions>({
       
         sidebar: [
           {
-            text: 'travel',
-            link: '/travel/',
-            children: [
-              {
-                text: '前言',
-                link:'/travel/index.md'
-              }
-            ]
+            text: '展览',
+            link: '/show/index.md',
           },
           {
-            text: 'react hooks',
-            link: '/fe/react/hooks.md'
+            text: '开始打工',
+            link: '/basic/index.md',
           },
-          {
-            text: 'todo react',
-            children: [
-              '/fe/react/todo-react/index.md',
-              '/fe/react/todo-react/component.md',
-            ]
-          },
-          {
-            text: 'react-three-fiber',
-            children: [
-              {
-                text: '介绍与基础使用',
-                link: '/tech/three/fiber.md',
-              }
-            ]
-          }
+          // {
+          //   text: 'react hooks',
+          //   link: '/fe/react/hooks.md'
+          // },
+          // {
+          //   text: 'todo react',
+          //   children: [
+          //     '/fe/react/todo-react/index.md',
+          //     '/fe/react/todo-react/component.md',
+          //   ]
+          // },
+          // {
+          //   text: 'react-three-fiber',
+          //   children: [
+          //     {
+          //       text: '介绍与基础使用',
+          //       link: '/tech/three/fiber.md',
+          //     }
+          //   ]
+          // }
         ],
       },
     }
