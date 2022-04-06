@@ -2,8 +2,8 @@ import { defineUserConfig } from "vuepress";
 import type { DefaultThemeOptions } from "vuepress";
 
 export default defineUserConfig<DefaultThemeOptions>({
-  title: '前端从业者手记',
-  description: 'Mia 的前端之旅',
+  title: 'MleMoe 前端笔记',
+  description: 'MleMoe 的前端之旅',
   bundler: '@vuepress/vite',
 
   head: [
