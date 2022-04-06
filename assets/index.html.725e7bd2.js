@@ -1,0 +1,1 @@
+const e={key:"v-cdc74868",path:"/basic/js/",title:"JavaScript",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649064064e3,contributors:[{name:"MleMoe",email:"i@mle.moe",commits:1}]},filePathRelative:"basic/js/index.md"};export{e as data};

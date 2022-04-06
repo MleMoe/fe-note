@@ -1,0 +1,1 @@
+const e={key:"v-955123de",path:"/basic/css/tailwind/",title:"\u539F\u5B50\u5316\u7684 CSS",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6765\u7531",slug:"\u6765\u7531",children:[]}],git:{updatedTime:1649064064e3,contributors:[{name:"MleMoe",email:"i@mle.moe",commits:1}]},filePathRelative:"basic/css/tailwind/index.md"};export{e as data};

@@ -1,0 +1,1 @@
+const a={key:"v-6a80a382",path:"/daily/GMTC/web3d.html",title:"web3d \u6280\u672F\u63A2\u7D22\u65B9\u6848",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1626191778e3,contributors:[{name:"mingshi",email:"mingshi.lm@alibaba-inc.com",commits:1}]},filePathRelative:"daily/GMTC/web3d.md"};export{a as data};

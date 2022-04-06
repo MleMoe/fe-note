@@ -1,0 +1,1 @@
+const e={key:"v-79c9f96f",path:"/daily/",title:"\u65E5\u5E38\u9047\u5230\u7684\u95EE\u9898",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1625922201e3,contributors:[{name:"MleMoe",email:"i@mle.moe",commits:1}]},filePathRelative:"daily/index.md"};export{e as data};

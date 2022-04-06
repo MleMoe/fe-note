@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as s,a,e as r}from"./app.d1630e5f.js";const o={},c={id:"three-js",tabindex:"-1"},_=a("a",{class:"header-anchor",href:"#three-js","aria-hidden":"true"},"#",-1),n=r(" Three.js"),d=[_,n];function h(i,f){return t(),s("h1",c,d)}var x=e(o,[["render",h],["__file","index.html.vue"]]);export{x as default};

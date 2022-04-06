@@ -1,0 +1,1 @@
+const e={key:"v-2d0a7ab3",path:"/be/",title:"\u524D\u8A00",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1626191778e3,contributors:[{name:"mingshi",email:"mingshi.lm@alibaba-inc.com",commits:1}]},filePathRelative:"be/index.md"};export{e as data};

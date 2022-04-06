@@ -1,0 +1,1 @@
+const e={key:"v-4cab345e",path:"/daily/fecode.html",title:"\u524D\u7AEF\u7F16\u7801",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6765\u7531",slug:"\u6765\u7531",children:[]}],git:{updatedTime:1626277342e3,contributors:[{name:"mingshi",email:"mingshi.lm@alibaba-inc.com",commits:1}]},filePathRelative:"daily/fecode.md"};export{e as data};

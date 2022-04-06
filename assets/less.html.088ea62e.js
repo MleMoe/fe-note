@@ -1,0 +1,1 @@
+const e={key:"v-38141b83",path:"/basic/css/preprocess/less.html",title:"",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649064064e3,contributors:[{name:"MleMoe",email:"i@mle.moe",commits:1}]},filePathRelative:"basic/css/preprocess/less.md"};export{e as data};

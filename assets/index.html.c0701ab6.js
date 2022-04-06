@@ -1,0 +1,1 @@
+const e={key:"v-b02068e0",path:"/basic/css/flex/",title:"flex \u5E03\u5C40",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649064064e3,contributors:[{name:"MleMoe",email:"i@mle.moe",commits:1}]},filePathRelative:"basic/css/flex/index.md"};export{e as data};

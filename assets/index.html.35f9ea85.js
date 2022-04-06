@@ -1,0 +1,1 @@
+const e={key:"v-1c526516",path:"/tech/webgl/",title:"WebGL",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1626191778e3,contributors:[{name:"mingshi",email:"mingshi.lm@alibaba-inc.com",commits:1}]},filePathRelative:"tech/webgl/index.md"};export{e as data};
